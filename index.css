@@ -52,13 +52,14 @@
     font-size: 0.88rem;
     background-color: var(--color-background);
     user-select: none;
-    overflow: hidden;
+    overflow-x: hidden;
+    color: var(--color-dark);
 
   }
   
   .container{
     display: grid;
-    grid-template-columns:14rem auto 23rem ;
+    grid-template-columns:14rem auto 23rem;
     gap: 1.8rem;
     width: 96%;
     margin: 0 auto;
@@ -133,8 +134,6 @@
 
 aside{
   height: 100vh;
- 
-  
 }
 aside .top{
   background: var(--color-white);
@@ -181,7 +180,7 @@ aside .sidebar a span{
 }
 aside .sidebar a:last-child{
   position: absolute;
-  bottom: 0rem;
+  bottom: 1rem;
   width: 100%;
 }
 
@@ -191,7 +190,7 @@ aside .sidebar a.active{
   margin-left: 0;
 
 }
-aside .sidebar a.active:before{
+aside .sidebar a.active::before{
   content:'';
   width: 6px;
   height: 100%;
@@ -222,3 +221,341 @@ aside .sidebar .message-counts{
   border-radius: var(--border-radius-1);
 }
 
+/* main */
+
+main{
+
+ margin-top: 1rem;
+
+
+ 
+}
+main .date{
+  display: inline-block;
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-1);
+ margin-top: 1rem;
+ padding: .5rem 1.6rem;
+}
+main .date input[type="date"]{
+  background: transparent;
+ color: var(--color-dark);
+
+
+}
+main .insights{
+  display: grid;
+   grid-template-columns: repeat(3, 1fr);
+
+  
+  gap: 1.6rem;
+}
+  
+
+  
+ 
+
+
+
+main .insights > div{
+  background: var(--color-white);
+  background-color: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+
+  
+}
+main .insights > div{
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+  
+  
+}
+main .insights > div:hover{
+  box-shadow: none;
+}
+main .insights > div span{
+  background-color:var(--color-primary);
+  padding: .5rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+main .insights > div.expenses span{
+  background: var(--color-danger);
+
+}
+main .insights > div.income span{
+  background: var(--color-sucess);
+
+}
+
+
+main .insights > div .middle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+ 
+}
+main .insights h1{
+  font-size: .9rem;
+}
+main .insights h3{
+  margin: 1rem 0 .6rem;
+  font-size: 1rem;
+}
+main .insights .progress{
+  position: relative;
+  width:60px;
+  height: 70px;
+  border-radius: 50%;
+  
+}
+main .insights svg{
+  
+ width: 7rem;
+ height: 7rem;
+}
+main .insights svg circle{
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px 5px);
+  stroke-dasharray: 110;
+  stroke-dashoffset: 92;
+}
+main .insights .sales svg circle{
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+main .insights .expenses svg circle{
+  stroke-dashoffset: 20;
+  stroke-dasharray: 80;
+}
+main .insights .income svg circle{
+  stroke-dashoffset: 35;
+  stroke-dasharray: 110;
+}
+main .insights .progress .number{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+main .insights small{
+  margin-top: 1.3rem;
+  display: block;
+}
+
+
+main .recent-order{
+  margin-top: 2rem;
+
+}
+main .recent-order h2{
+  margin-bottom: .8rem;
+}
+main .recent-order table{
+  background: var(--color-white);
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+main .recent-order table:hover{
+  box-shadow: none;
+}
+
+main table tbody td{
+  height: 2.8rem;
+
+  
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
+
+}
+main table tbody:last-child tr:last-child td{
+  border: none;
+}
+
+/* .sales,
+.expenses,
+.income{
+  max-width: 200px;
+} */
+
+
+/* RIGHT */
+.right{
+  margin-top: 1.4rem;
+}
+
+
+.right .top{
+ display: flex;
+justify-content:center;
+align-items: center;
+gap: 2rem;
+
+}
+.right .top button{
+  display: none;
+}
+
+.right .theme-toggler{
+  background: var(--color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.6rem;
+   width: 3rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-1);
+
+}
+.right .theme-toggler span{
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right .theme-toggler span.active{
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--border-radius-1);
+
+}
+
+.right .top .profile{
+  display: flex;
+  gap: 1rem;
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+/* recent updates */
+
+.right .recent-updates{
+  margin-top: 3rem;
+}
+.right .recent-updates h2{
+  margin-bottom: 0.8rem;
+}
+
+.right .recent-updates  {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition:  all 300ms ease;
+}
+.right .recent-updates .updates:hover{
+  box-shadow: none;
+}
+
+.right .recent-updates .updates .update{
+  display: grid;
+  grid-template-columns: 2.6rem auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*  */
+
+@media(max-width:1100px){
+ 
+.container{
+  grid-template-columns: 1fr 1fr ;
+}
+.container.opengrid{
+  margin-left: 0;
+ z-index: 1;
+  
+  
+}
+
+aside{
+  display: none;
+ 
+  background: var(--color-white);
+  
+ 
+}
+aside.open{
+z-index: 10000;
+  display: block;
+position: fixed;
+ 
+  
+}
+
+#close-btn{
+  display: block;
+}
+
+main .insights{
+  grid-template-columns: repeat(3 1fr);
+}
+
+.right .top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: white;
+  height: 3rem;
+
+}
+.right .top button{
+  display: block;
+  margin-left: 1.8rem;
+  background-color:var(--color-info-dark);
+  color: var(--color-white);
+  border-radius: 8px;
+
+}
+
+}
+
+@media(max-width:980px){
+  main .insights > div .middle{
+    justify-content: space-between; 
+   
+  }
+  main .insights{
+   display: flex;
+   flex-direction: column;
+  
+  }  
+
+}
+
+@media(max-width:768px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+  
+}
