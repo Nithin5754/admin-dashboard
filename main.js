@@ -31,4 +31,30 @@ close.addEventListener('click',()=>{
 
 
 
+const hidesectionEl=document.querySelectorAll('.hidesection')
+const btns=document.querySelectorAll('.btn')
 
+
+container.addEventListener('click',(e)=>{
+ 
+  const id=e.target.dataset.id;
+
+if(id){
+btns.forEach((btn)=>{
+  btn.classList.remove('live')
+})
+
+e.target.classList.add('live')
+
+hidesectionEl.forEach((hidesection)=>{
+  hidesection.classList.remove('live');
+})
+
+
+const element=document.getElementById(id);
+element.classList.add('live')
+}
+
+
+
+})
